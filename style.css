@@ -6,6 +6,8 @@
 body {
   font-family: "Roboto", sans-serif;
   overflow: hidden;
+  margin: 0;
+  background-color: black;
 }
 .navbar {
   width: 100%;
@@ -97,9 +99,12 @@ body {
 .content-container {
   margin-left: 50px;
   padding-top: 50px;
+  min-height: calc(100vh - 50px);
+  height: calc(100vh - 50px);
 
   background-color: black;
-  overflow-y: auto;
+  overflow-y: scroll;
+  width: calc(100% - 50px);
 }
 .featured-content {
   height: 50vh;
@@ -129,8 +134,15 @@ body {
   width: max-content;
 }
 .movie-list-container {
-  height: 50vh;
   color: aliceblue;
+  height: auto;
+}
+.movie-list-wrapper {
+  position: relative;
+  overflow-x: scroll;
+}
+.movie-list-wrapper::-webkit-scrollbar {
+  display: none;
 }
 .movie-list {
   display: flex;
@@ -175,7 +187,7 @@ body {
   color: black;
   font-size: 10px;
   font-weight: bold;
-  position: relative;
+  position: absolute;
   bottom: 70px;
   width: 230px;
 
@@ -193,4 +205,13 @@ body {
   left: 40px;
   bottom: 30px;
   opacity: 0;
+}
+.arrow {
+  font-size: 100px;
+  position: absolute;
+  color: gray;
+  top: 90px;
+  right: 0;
+  opacity: 0.5;
+  cursor: pointer;
 }
